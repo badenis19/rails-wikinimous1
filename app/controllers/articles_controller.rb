@@ -12,8 +12,8 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    @article = Article.create(params[article_params])
-    
+    @article = Article.create(article_params)
+    puts @article
     redirect_to articles_path
   end
 
@@ -23,7 +23,7 @@ class ArticlesController < ApplicationController
 
   def update
     @article = Article.find(params[:id])
-    @article.update(params[article_params])
+    @article.update(article_params)
   end
 
   def destroy
